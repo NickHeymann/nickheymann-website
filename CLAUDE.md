@@ -67,6 +67,26 @@ Definiert in `globals.css`:
 - PlayIcon, ArrowRightIcon, ArrowDownIcon
 - MenuIcon, CloseIcon, CheckIcon
 
+## Deployment-Standards
+
+### Frontend (Vercel)
+- Automatisches Deploy bei Push auf `main`
+- Preview Deployments für PRs
+- Environment Variables in Vercel Dashboard
+
+### Backend-Services (Hetzner Docker)
+Falls Backend benötigt:
+```
+/opt/nick-portfolio/
+├── docker-compose.yml
+├── .env
+└── services/
+```
+
+### CI/CD
+- Frontend: Vercel (automatisch)
+- Backend: GitHub Actions → Docker → Hetzner
+
 ## Safety-Regeln für Git-Operationen durch LLM
 
 - Arbeite NIEMALS direkt auf dem Branch `main`, sondern immer auf Feature-/Fix-Branches (z.B. `feature/...`, `fix/...`, `refactor/...`).
