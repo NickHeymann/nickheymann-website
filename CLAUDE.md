@@ -35,13 +35,22 @@ npm run dev     # localhost:3000
 npm run build   # Production build
 ```
 
-## Infrastructure
-- **Frontend:** Vercel (nickheymann.de)
-- **Backend:** Hetzner 91.99.177.238
+## Infrastructure & Integration
+
+- **Frontend**: Vercel (nickheymann.de)
+- **Backend**: Hetzner CX32 (91.99.177.238)
   - Traefik v2.11 (Reverse Proxy)
   - PostgreSQL 16
-  - n8n (Automation)
-- **Domain:** Migration Goneo → Cloudflare (in progress)
+  - n8n (Automation/Workflows)
+  - Supabase Self-Hosted (Datenbank, Auth, Storage)
+- **Domain**: Migration Goneo → Cloudflare (in progress)
+- **Deployment**:
+  - Frontend: Automatisch via Vercel bei Push auf `main`
+  - Backend-Services: Docker/Compose auf Hetzner
+- **Secrets-Management**:
+  - Vercel Environment Variables für Frontend
+  - `.env`-Dateien auf Hetzner (nicht im Repo)
+  - Dieses Repo enthält nur `.env.example` mit Platzhaltern
 
 ## CSS Variables
 Definiert in `globals.css`:
